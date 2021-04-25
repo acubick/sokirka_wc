@@ -21,4 +21,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 		<section class="ftco-section bg-light">
     	<div class="container-fluid">
+
+			<?php 	/**
+	 * Hook: woocommerce_before_shop_loop.
+	 *
+	 * @hooked woocommerce_output_all_notices - 10
+	 * @hooked woocommerce_result_count - 20
+	 * @hooked woocommerce_catalog_ordering - 30
+	 */
+	do_action( 'woocommerce_before_shop_loop' );
+	?>
+			
 <ul class="row products columns-<?php echo esc_attr( wc_get_loop_prop( 'columns' ) ); ?>">
