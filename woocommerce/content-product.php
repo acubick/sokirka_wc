@@ -24,7 +24,8 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
 ?>
-<li <?php wc_product_class( '', $product ); ?>>
+<li <?php wc_product_class( 'ftco-animate ', $product ); ?>>
+<div class="product_custom">
 	<?php
 	/**
 	 * Hook: woocommerce_before_shop_loop_item.
@@ -40,7 +41,11 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	 * @hooked woocommerce_template_loop_product_thumbnail - 10
 	 */
 	do_action( 'woocommerce_before_shop_loop_item_title' );
+?>
 
+<div class="text py-3 px-3">
+
+<?php
 	/**
 	 * Hook: woocommerce_shop_loop_item_title.
 	 *
@@ -54,8 +59,15 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	 * @hooked woocommerce_template_loop_rating - 5
 	 * @hooked woocommerce_template_loop_price - 10
 	 */
+	?> <div class="d-flex product-display-price"><?php
+
 	do_action( 'woocommerce_after_shop_loop_item_title' );
 
+?></div>
+
+	<hr>
+
+  		<p class="bottom-area d-flex"><?php
 	/**
 	 * Hook: woocommerce_after_shop_loop_item.
 	 *
@@ -64,4 +76,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	 */
 	do_action( 'woocommerce_after_shop_loop_item' );
 	?>
+			</p>
+		</div>
+	</div>
 </li>

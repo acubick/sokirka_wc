@@ -152,7 +152,7 @@ function sokirka_scripts() {
 
 	wp_enqueue_style( 'sokirka-aos', get_template_directory_uri()."/assets/css/aos.css", array(), _S_VERSION );
 
-	wp_enqueue_style( 'ionicons', get_template_directory_uri()."/assets/css/aionicons.min.css", array(), _S_VERSION );
+	wp_enqueue_style( 'ionicons', get_template_directory_uri()."/assets/css/ionicons.min.css", array(), _S_VERSION );
 
 	wp_enqueue_style( 'bootstrap-datepicker', get_template_directory_uri()."/assets/css/bootstrap-datepicker.css", array(), _S_VERSION );
 	wp_enqueue_style( 'jquery.timepicker', get_template_directory_uri()."/assets/css/jquery.timepicker.css", array(), _S_VERSION );
@@ -186,7 +186,7 @@ function sokirka_scripts() {
 
 
 
-	wp_enqueue_script( 'sokirka-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	// wp_enqueue_script( 'sokirka-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

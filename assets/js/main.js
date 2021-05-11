@@ -64,7 +64,7 @@
 
 	var carousel = function() {
 	
-		$('.product-slider').owlCarousel({
+		$('.product_custom-slider').owlCarousel({
 			autoplay: true,
 			loop: true,
 			items:1,

@@ -1,8 +1,8 @@
 <?php
 /**
- * Product Loop End
+ * Product loop sale flash
  *
- * This template can be overridden by copying it to yourtheme/woocommerce/loop/loop-end.php.
+ * This template can be overridden by copying it to yourtheme/woocommerce/loop/sale-flash.php.
  *
  * HOWEVER, on occasion WooCommerce will need to update template files and you
  * (the theme developer) will need to copy the new files to your theme to
@@ -12,23 +12,21 @@
  *
  * @see         https://docs.woocommerce.com/document/template-structure/
  * @package     WooCommerce\Templates
- * @version     2.0.0
+ * @version     1.6.4
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
-	exit;
+	exit; // Exit if accessed directly
 }
-?>
-</ul>
-<?php 
 
-	/**
-	 * Hook: woocommerce_after_shop_loop.
-	 *
-	 * @hooked woocommerce_pagination - 10
-	 */
-	do_action( 'woocommerce_after_shop_loop' );
+global $post, $product;
 
 ?>
+<?php if ( $product->is_on_sale() ) : ?>
 
-</div></section>
+	<?php echo apply_filters( 'woocommerce_sale_flash', '<span class="onsale">' . esc_html__( 'Sale!', 'woocommerce' ) . '</span>', $post, $product ); ?>
+
+	<?php
+endif;
+
+/* Omit closing PHP tag at the end of PHP files to avoid "headers already sent" issues. */
