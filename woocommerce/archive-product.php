@@ -20,7 +20,6 @@ defined( 'ABSPATH' ) || exit;
 get_header( 'shop' );
 ?>
 
-		
 <div class="hero-wrap hero-bread" style="background-image: url('<?php echo get_template_directory_uri().'/assets/images/bg_6.jpg'; ?>')">
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
@@ -32,7 +31,6 @@ get_header( 'shop' );
       </div>
     </div>
 		
-
 <?php
 /**
  * Hook: woocommerce_before_main_content.
@@ -86,12 +84,6 @@ if ( woocommerce_product_loop() ) {
 
 	woocommerce_product_loop_end();
 
-	/**
-	 * Hook: woocommerce_after_shop_loop.
-	 *
-	 * @hooked woocommerce_pagination - 10
-	 */
-	do_action( 'woocommerce_after_shop_loop' );
 } else {
 	/**
 	 * Hook: woocommerce_no_products_found.
